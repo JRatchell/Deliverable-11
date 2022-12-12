@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    function check() {
+        let passwordValue= document.getElementById('password').value
+        let numberpattern = /[0-9]/g ;
+        if (passwordValue.test(numberpattern)===true) 
+        document.getElementById('messagebox').innerHTML = "correct" ;
+        }
+</script>
+</head>
+<body>
+    <input id="password">
+    <button onclick="check()">Check</button>
+    <div id="messagebox"></div>
+</body>
+</html>
