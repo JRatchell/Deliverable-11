@@ -1,38 +1,19 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Form Validation Attempt</title>
-
-    
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.43.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.43.2/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
 
-    <script>
-        function ucCheck (){
-
-            let x= getElementById('password').value ;
-
-            let uppercasepattern = /[A-Z]/g ;
-
-            let ucAnswer = uppercasepattern.test('password')
-
-            let text; if (ucAnswer === true) {
-                text = "Password contains uppercase letter(s)" ;
-            } 
-            document.getElementById("int").innerHTML = answer;
-
-        }
-    </script>
-
+<script src="val.js"></script>
 </head>
-
 <body>
-    <p id="int">Please type your password here</p>
-    <input class="border" id="password" placeholder="Type here">
-    <button class="border" type="button" onclick="ucCheck()">Submit</button>
-    </form>
-
-
-
+    <input class="input input-bordered input-success w-full max-w-xs" id="password" placeholder="Type your password here">
+    <button class="btn" onclick="checkNmb();checkUC();checkLC();checkLength()">Check</button>
+    <div class="border">
+    <div id="messageNmb"></div> 
+    <div id="messageUC"></div>
+    <div id="messageLC"></div>
+    <div id="messageLength"></div> 
+    </div>
 </body>
-
 </html>
