@@ -7,8 +7,8 @@
 <script src="val.js"></script>
 </head>
 <body>
-    <input class="input input-bordered input-success w-full max-w-xs" id="password" placeholder="Type your password here">
-    <button class="btn" onclick="checkNmb();checkUC();checkLC();checkLength()">Check</button>
+    <input class="input input-bordered input-success w-full max-w-xs" id="password" placeholder="Type your password here" onkeydown="checkNmb();checkUC();checkLC();checkLength()">
+    <button class="btn">Check</button>
     <div class="border">
     <div id="messageNmb"></div> 
     <div id="messageUC"></div>
