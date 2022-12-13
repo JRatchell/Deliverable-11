@@ -2,17 +2,43 @@
 <html>
 <head>
 <script>
-    function check() {
-        let passwordValue= document.getElementById('password').value
+    function checkNmb() {
+        let passwordValue= document.getElementById('password').value;
         let numberpattern = /[0-9]/g ;
-        if (passwordValue.test(numberpattern)===true) 
-        document.getElementById('messagebox').innerHTML = "correct" ;
-        }
+        let answerNmb = numberpattern.test(passwordValue);
+        document.getElementById('messageNmb').innerHTML=answerNmb;
+    }
+    function checkUC(){
+        let passwordValue= document.getElementById('password').value;
+        let uppercasepattern = /[A-Z]/g ;
+        let answerUC = uppercasepattern.test(passwordValue);
+        document.getElementById('messageUC').innerHTML=answerUC;
+    }
+    function checkLC(){
+        let passwordValue= document.getElementById('password').value;
+        let lowercasepattern = /[a-z]/g ;
+        let answerLC = lowercasepattern.test(passwordValue);
+        document.getElementById('messageLC').innerHTML=answerLC;
+    }
+    function checkLength(){
+        let passwordValue= document.getElementById('password').value;
+            if (passwordValue.length >= 8) {
+                document.getElementById('messageLength').innerHTML='true';
+            
+
+            } 
+            else {
+                document.getElementById('messageLength').innerHTMl='false';
+            }
+    }
 </script>
 </head>
 <body>
     <input id="password">
-    <button onclick="check()">Check</button>
-    <div id="messagebox"></div>
+    <button onclick="checkNmb();checkUC();checkLC();checkLength()">Check</button>
+    <div id="messageNmb"></div> 
+    <div id="messageUC"></div>
+    <div id="messageLC"></div>
+    <div id="messageLength"></div> 
 </body>
 </html>
